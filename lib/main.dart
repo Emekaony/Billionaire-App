@@ -1,5 +1,7 @@
+import "package:billionaire_app/components/balance_view.dart";
 import 'package:flutter/material.dart';
 import "package:shared_preferences/shared_preferences.dart";
+import "package:billionaire_app/components/add_money_button.dart";
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  double balance = 0.0;
+  double balance = 144000;
 
   void addMoney() async {
     setState(() {
@@ -54,29 +56,10 @@ class _MyAppState extends State<MyApp> {
           color: Colors.blueGrey[700],
           child: Column(
             children: [
-              Expanded(
-                flex: 9,
-                child: SizedBox(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Bank balance:"),
-                      SizedBox(height: 10),
-                      Text("\$$balance"),
-                    ],
-                  ),
-                ),
-              ),
+              BalanceView(balance: balance),
               Expanded(
                 flex: 1,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red[700],
-                    minimumSize: Size(double.infinity, 0),
-                  ),
-                  onPressed: addMoney,
-                  child: Text("Click me!"),
-                ),
+                child: AddMoneyButton(handleButtonPressed: addMoney),
               ),
             ],
           ),
