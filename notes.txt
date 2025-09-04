@@ -1,0 +1,2 @@
+- Expanded widget allows u to take up as mich space as possible
+- Along with flex, the Expanded widget can be very powerful
