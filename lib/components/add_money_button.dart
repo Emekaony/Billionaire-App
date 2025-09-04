@@ -7,12 +7,9 @@ class AddMoneyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.red[700],
-        minimumSize: Size(double.infinity, 0),
-      ),
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.green[700]),
       onPressed: handleButtonPressed,
-      child: Text("Click me!"),
+      child: Icon(Icons.add, size: 32, fontWeight: FontWeight.bold),
     );
   }
 }

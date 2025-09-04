@@ -1,4 +1,5 @@
 import "package:billionaire_app/components/balance_view.dart";
+import "package:billionaire_app/components/reduce_money.dart";
 import 'package:flutter/material.dart';
 import "package:shared_preferences/shared_preferences.dart";
 import "package:billionaire_app/components/add_money_button.dart";
@@ -18,10 +19,22 @@ class _MyAppState extends State<MyApp> {
   double balance = 144000;
 
   void addMoney() async {
-    setState(() {
-      balance += 500;
-    });
+    if (balance < 10000) {
+      setState(() {
+        balance += 500;
+      });
+    }
 
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setDouble("balance", balance);
+  }
+
+  void reduceMoney() async {
+    if (balance > 500) {
+      setState(() {
+        balance -= 500;
+      });
+    }
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setDouble("balance", balance);
   }
@@ -59,7 +72,21 @@ class _MyAppState extends State<MyApp> {
               BalanceView(balance: balance),
               Expanded(
                 flex: 1,
-                child: AddMoneyButton(handleButtonPressed: addMoney),
+                child: Row(
+                  children: [
+                    // You use an expanded inside another expanded
+                    // we learn everyday!
+                    Expanded(
+                      child: ReduceMoneyButton(
+                        handleButtonPressed: reduceMoney,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: AddMoneyButton(handleButtonPressed: addMoney),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
