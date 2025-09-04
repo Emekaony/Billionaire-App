@@ -1,2 +1,3 @@
 - Expanded widget allows u to take up as mich space as possible
-- Along with flex, the Expanded widget can be very powerful
+- Along with flex, the Expanded widget can be very powerful.
+- sharedPreferences will help you persist data between app reloads.
