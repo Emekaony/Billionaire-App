@@ -11,8 +11,10 @@ A simple Flutter app for adding and subtracting money from a virtual balance.
 ### How It Works
 The app starts with a default balance. You can add or subtract money in increments of 500 units. The balance is displayed in USD format. All changes are saved using local storage, so your balance persists between sessions.
 
-### Screenshots
-<!-- Add screenshots of the app here if available -->
+
+### App Screenshot
+
+![App Screenshot](assets/images/image.png)
 
 ### Getting Started
 1. **Clone the repository:**
