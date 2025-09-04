@@ -1,16 +1,42 @@
-# billionaire_app
+## Billionaire App
 
-A new Flutter project.
+A simple Flutter app for adding and subtracting money from a virtual balance.
 
-## Getting Started
+### Features
+- **Add Money**: Increase your balance by tapping the green plus button.
+- **Reduce Money**: Decrease your balance by tapping the red minus button.
+- **Persistent Balance**: Your balance is saved locally and restored when you reopen the app.
+- **Modern UI**: Clean, dark-themed interface with clear balance display.
 
-This project is a starting point for a Flutter application.
+### How It Works
+The app starts with a default balance. You can add or subtract money in increments of 500 units. The balance is displayed in USD format. All changes are saved using local storage, so your balance persists between sessions.
 
-A few resources to get you started if this is your first Flutter project:
+### Screenshots
+<!-- Add screenshots of the app here if available -->
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Getting Started
+1. **Clone the repository:**
+	```sh
+	git clone <repo-url>
+	cd billionaire_app
+	```
+2. **Install dependencies:**
+	```sh
+	flutter pub get
+	```
+3. **Run the app:**
+	```sh
+	flutter run
+	```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Dependencies
+- [Flutter](https://flutter.dev/)
+- [shared_preferences](https://pub.dev/packages/shared_preferences)
+- [currency_formatter](https://pub.dev/packages/currency_formatter)
+
+### File Structure
+- `lib/main.dart`: Main app logic and UI
+- `lib/components/`: UI components (balance view, add/reduce buttons)
+
+### License
+This project is licensed under the MIT License.
