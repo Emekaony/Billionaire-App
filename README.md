@@ -14,7 +14,7 @@ The app starts with a default balance. You can add or subtract money in incremen
 
 ### App Screenshot
 
-![App Screenshot](assets/images/image.png)
+![App Screenshot](assets/images/app_screenshot.png)
 
 ### Getting Started
 1. **Clone the repository:**
